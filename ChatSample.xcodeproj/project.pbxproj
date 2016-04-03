@@ -9,19 +9,17 @@
 /* Begin PBXBuildFile section */
 		2278539A1CAFE5980069C11C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227853991CAFE5980069C11C /* AppDelegate.swift */; };
 		2278539C1CAFE5980069C11C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2278539B1CAFE5980069C11C /* ViewController.swift */; };
-		2278539F1CAFE5980069C11C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2278539D1CAFE5980069C11C /* Main.storyboard */; };
 		227853A11CAFE5980069C11C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 227853A01CAFE5980069C11C /* Assets.xcassets */; };
-		227853A41CAFE5980069C11C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 227853A21CAFE5980069C11C /* LaunchScreen.storyboard */; };
+		227853AC1CB000870069C11C /* SocketIOClientSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227853AB1CB000870069C11C /* SocketIOClientSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		227853961CAFE5980069C11C /* ChatSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		227853991CAFE5980069C11C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2278539B1CAFE5980069C11C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2278539E1CAFE5980069C11C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		227853A01CAFE5980069C11C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		227853A31CAFE5980069C11C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		227853A51CAFE5980069C11C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		227853AB1CB000870069C11C /* SocketIOClientSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SocketIOClientSwift.framework; path = Carthage/Build/iOS/SocketIOClientSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				227853AC1CB000870069C11C /* SocketIOClientSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +37,7 @@
 		2278538D1CAFE5980069C11C = {
 			isa = PBXGroup;
 			children = (
+				227853AB1CB000870069C11C /* SocketIOClientSwift.framework */,
 				227853981CAFE5980069C11C /* ChatSample */,
 				227853971CAFE5980069C11C /* Products */,
 			);
@@ -56,9 +56,7 @@
 			children = (
 				227853991CAFE5980069C11C /* AppDelegate.swift */,
 				2278539B1CAFE5980069C11C /* ViewController.swift */,
-				2278539D1CAFE5980069C11C /* Main.storyboard */,
 				227853A01CAFE5980069C11C /* Assets.xcassets */,
-				227853A21CAFE5980069C11C /* LaunchScreen.storyboard */,
 				227853A51CAFE5980069C11C /* Info.plist */,
 			);
 			path = ChatSample;
@@ -74,6 +72,7 @@
 				227853921CAFE5980069C11C /* Sources */,
 				227853931CAFE5980069C11C /* Frameworks */,
 				227853941CAFE5980069C11C /* Resources */,
+				227853AD1CB000940069C11C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -122,13 +121,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				227853A41CAFE5980069C11C /* LaunchScreen.storyboard in Resources */,
 				227853A11CAFE5980069C11C /* Assets.xcassets in Resources */,
-				2278539F1CAFE5980069C11C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		227853AD1CB000940069C11C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SocketIOClientSwift.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		227853921CAFE5980069C11C /* Sources */ = {
@@ -141,25 +155,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		2278539D1CAFE5980069C11C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2278539E1CAFE5980069C11C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		227853A21CAFE5980069C11C /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				227853A31CAFE5980069C11C /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		227853A61CAFE5980069C11C /* Debug */ = {
@@ -251,7 +246,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ChatSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kkyouhei.ChatSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -262,7 +262,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ChatSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kkyouhei.ChatSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -288,6 +293,7 @@
 				227853AA1CAFE5980069C11C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
